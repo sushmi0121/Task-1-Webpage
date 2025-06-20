@@ -2,32 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Web Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexPlanet Task 1 - Avula Susmitha</title>
   <style>
     body {
-      background-color: #222;
-      color: white;
-      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding-top: 100px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
     }
     button {
-      padding: 10px 20px;
-      background-color: #00bcd4;
-      color: white;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: #fff;
+      color: #1f4037;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e0f7fa;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #d2f1e2;
     }
   </style>
 </head>
 <body>
   <h1>Hello, I'm Avula Susmitha!</h1>
-  <p>This is my ApexPlanet internship Task 1 webpage.</p>
+  <p>This is my Task 1 project for ApexPlanet's Web Development Internship.</p>
   <button onclick="showAlert()">Click Me</button>
+
+  <footer>© 2025 Avula Susmitha</footer>
 
   <script>
     function showAlert() {
-      alert("Hello from Avula Susmitha!");
+      alert("Thank you for viewing my Task 1 project!");
     }
   </script>
 </body>
