@@ -3,79 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ApexPlanet Task 1 - Susmitha</title>
+  <title>Task 1 - Avula Susmitha</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
-      color: #fff;
+    }
+
+    .container {
+      background-size: cover;
+      background-position: center;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
-    img {
-      width: 200px;
-      border-radius: 10px;
-      margin-bottom: 1em;
-    }
-    a {
+      align-items: center;
       color: #fff;
-      text-decoration: underline;
-      margin-bottom: 2em;
+      text-align: center;
+      padding: 20px;
+      position: relative;
     }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 80%;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    #quote {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
     button {
-      padding: 15px 30px;
-      font-size: 1em;
-      background-color: #fff;
-      color: #1f4037;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #ffffff;
+      color: #333;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     button:hover {
-      background-color: #e0f7fa;
+      background-color: #e0e0e0;
     }
+
     footer {
       position: absolute;
-      bottom: 20px;
-      font-size: 0.9em;
-      color: #d2f1e2;
+      bottom: 10px;
+      color: #eee;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #eee;
+      text-decoration: underline;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, I'm Susmitha!</h1>
-  <p>This is my Task 1 submission for ApexPlanet's Web Development Internship.</p>
-  
-  <!-- Image -->
-  <img src="https://picsum.photos/200" alt="Random Image" />
 
-  <!-- Link -->
-  <a href="https://www.apexplanet.in" target="_blank">Visit ApexPlanet</a>
-
-  <!-- Button -->
-  <button onclick="showAlert()">Click Me</button>
-
-  <footer>© 2025 Avula Susmitha</footer>
+  <div class="container" id="bg-container">
+    <div class="overlay">
+      <h1>Hello, I'm Avula Susmitha!</h1>
+      <p id="quote">Click the button to get inspired!</p>
+      <button onclick="showQuote()">Click Me</button>
+      <br><a href="https://www.apexplanet.in" target="_blank">Visit ApexPlanet</a>
+    </div>
+    <footer>© 2025 Avula Susmitha</footer>
+  </div>
 
   <script>
-    function showAlert() {
-      alert("Thank you for checking out my webpage!");
+    const quotes = [
+      {
+        text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        image: "https://picsum.photos/id/1011/800/600"
+      },
+      {
+        text: "The only way to do great work is to love what you do.",
+        image: "https://picsum.photos/id/1005/800/600"
+      },
+      {
+        text: "In the middle of every difficulty lies opportunity.",
+        image: "https://picsum.photos/id/1025/800/600"
+      },
+      {
+        text: "Believe you can and you're halfway there.",
+        image: "https://picsum.photos/id/1040/800/600"
+      },
+      {
+        text: "Don’t watch the clock; do what it does. Keep going.",
+        image: "https://picsum.photos/id/1059/800/600"
+      }
+    ];
+
+    function showQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+      document.getElementById("quote").textContent = quote.text;
+      document.getElementById("bg-container").style.backgroundImage = `url('${quote.image}')`;
     }
+
+    // Load a default quote/image on page load
+    showQuote();
   </script>
+
 </body>
 </html>
